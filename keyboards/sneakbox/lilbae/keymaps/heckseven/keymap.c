@@ -5,7 +5,7 @@
 
 // Physical layout:
 //         [ ESC  ]          <- top key
-// [ PTT ] [ --- ] [ GUI ]   <- big button (tap=Enter, hold=Ctrl+F18), inactive, GUI
+// [ PTT ] [ --- ] [ GUI ]   <- big button (tap=Enter, hold=Ctrl+F11), inactive, GUI
 
 enum custom_keycodes {
     KC_ENT_PTT = SAFE_RANGE,
@@ -25,7 +25,7 @@ void matrix_scan_user(void) {
     if (ptt_timer != 0 && !ptt_held && timer_elapsed(ptt_timer) >= TAPPING_TERM) {
         ptt_held = true;
         register_mods(MOD_BIT(KC_LCTL));
-        register_code(KC_F18);
+        register_code(KC_F11);
     }
 }
 
@@ -38,7 +38,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 if (ptt_held) {
                     ptt_held = false;
-                    unregister_code(KC_F18);
+                    unregister_code(KC_F11);
                     unregister_mods(MOD_BIT(KC_LCTL));
                 } else {
                     tap_code(KC_ENT);
