@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "Laptop 16 Keyboard Module - ANSI",
+    "keyboard_name": "Laptop 16 Keyboard Module - ANSI Copilot",
     "manufacturer": "Framework",
     "maintainer": "JohnAZoidberg",
     "bootloader": "rp2040",
@@ -16,8 +16,8 @@
     "processor": "RP2040",
     "url": "https://fr.mw/FRAKDKEN",
     "usb": {
-        "device_version": "0.3.1",
-        "pid": "0x0012",
+        "device_version": "0.3.2",
+        "pid": "0x0030",
         "vid": "0x32AC",
         "force_nkro": false
     },

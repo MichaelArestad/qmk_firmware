@@ -1,5 +1,6 @@
 set -e
 qmk compile -kb framework/ansi -km default
+qmk compile -kb framework/copilot -km default
 qmk compile -kb framework/iso -km default
 qmk compile -kb framework/jis -km default
 qmk compile -kb framework/numpad -km default

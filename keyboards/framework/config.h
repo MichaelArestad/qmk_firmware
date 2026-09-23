@@ -32,7 +32,9 @@
 // Enable serial number. Calls into dyn_serial_number_string* functions
 #define SERIAL_NUMBER
 
-#ifdef KEYBOARD_framework_ansi
+#if KEYBOARD_framework_ansi
+    #define LED_CAPS_LOCK_PIN GP24
+#elif KEYBOARD_framework_copilot
     #define LED_CAPS_LOCK_PIN GP24
 #elif KEYBOARD_framework_iso
     #define LED_CAPS_LOCK_PIN GP24
@@ -59,10 +61,7 @@
 
 // RGB config
 
-// Don't turn off backlight and caps LED when in USB suspend
-// Because with selective suspend, the driver will eagerly suspend the keyboard after only a short while of inactivity
-#define NO_SUSPEND_POWER_DOWN
-// Must keep this, so we can suspend RGB backlight with SLEEP# pin
+// Turn off RGB LED when USB suspended
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 
 // RGB Matrix Animation modes. Explicitly enabled
